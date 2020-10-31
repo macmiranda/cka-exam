@@ -23,4 +23,26 @@ set -g @resurrect-processes 'ssh psql mysql sqlite3'
 run '~/.tmux/plugins/tpm/tpm'
 EOF
 
+patch ~/.zshrc <<EOF
+--- /home/ubuntu/.zshrc 2020-10-31 23:16:33.041488134 +0100
++++ zshrc       2020-10-31 23:23:26.377539797 +0100
+@@ -17,7 +17,7 @@
+ # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+ # Uncomment the following line to use case-sensitive completion.
+-# CASE_SENSITIVE="true"
++CASE_SENSITIVE="true"
+
+ # Uncomment the following line to use hyphen-insensitive completion.
+ # Case-sensitive completion must be off. _ and - will be interchangeable.
+@@ -68,7 +68,7 @@
+ # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+ # Example format: plugins=(rails git textmate ruby lighthouse)
+ # Add wisely, as too many plugins slow down shell startup.
+-plugins=(git)
++plugins=(git kubectl)
+
+ source $ZSH/oh-my-zsh.sh
+EOF
+
 zsh
