@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt update && sudo apt install -y zsh tmux git vim curl
+sudo apt-get update && sudo apt-get install -y zsh tmux git vim curl
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -45,4 +45,21 @@ patch ~/.zshrc <<EOF
  source $ZSH/oh-my-zsh.sh
 EOF
 
-zsh
+sudo modprobe br_netfilter
+
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sudo sysctl --system
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo apt-get update
+
+echo "export EDITOR=/usr/bin/vim" >> ~/.zshrc
+
+# zsh
