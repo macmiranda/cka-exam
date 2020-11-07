@@ -2,7 +2,7 @@
 
 sudo apt-get update && sudo apt-get install -y zsh tmux git vim curl
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 sudo chsh -s /bin/zsh ubuntu 
 
@@ -62,5 +62,7 @@ sudo apt-get update
 
 echo "export EDITOR=/usr/bin/vim" >> ~/.zshrc
 echo "alias ca-hash=\"openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'\"" >> ~/.zshrc
+
+curl -sL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 |bash
 
 # zsh
