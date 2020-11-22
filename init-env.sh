@@ -4,7 +4,7 @@ sudo apt-get update && sudo apt-get install -y zsh tmux git vim curl
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-sudo chsh -s /bin/zsh ubuntu 
+sudo chsh -s /bin/zsh $(whoami) 
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cat > ~/.tmux.conf <<EOF
