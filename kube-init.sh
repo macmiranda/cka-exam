@@ -10,6 +10,6 @@ then
 	sudo cp -a /etc/kubernetes/admin.conf $HOME/.kube/config
 	sudo chown $(id -u):$(id -g) $HOME/.kube/config
 	kubectl wait --for=condition=Ready node/$(hostname) --timeout=90s
-	kubectl create -f https://docs.projectcalico.org/manifests/calico.yaml 
+	kubectl create -f https://docs.projectcalico.org/manifests/canal.yaml
 	kubectl wait --for=condition=Ready node/$(hostname) --timeout=90s
 fi
