@@ -7,4 +7,4 @@ When using `tmux` for the first time, do a `Prefix + I` (capital "i") to install
 <br/>
 <br/>
 <br/>
-<a  href="https://www.buymeacoffee.com/macmiranda"><img alt="Buy me a coffee" src="https://raw.githubusercontent.com/macmiranda/cka-exam/main/.images/bmc.png" width="15%" /></a>
+[![Buy me a coffee](https://raw.githubusercontent.com/macmiranda/cka-exam/main/.images/bmc.png)](https://www.buymeacoffee.com/macmiranda)
